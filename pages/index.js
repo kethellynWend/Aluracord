@@ -1,6 +1,4 @@
 import { Box, Button, Text, TextField, Image } from "@skynexui/components";
-import React from "react";
-import { useRouter } from "next/router";
 import appConfig from "../config.json";
 
 function GlobalStyle() {
@@ -33,8 +31,8 @@ function GlobalStyle() {
     `}</style>
   );
 }
+
 function Titulo(props) {
-  console.log(props);
   const Tag = props.tag || "h1";
   return (
     <>
@@ -43,31 +41,32 @@ function Titulo(props) {
         ${Tag} {
           color: ${appConfig.theme.colors.neutrals["000"]};
           font-size: 24px;
-          font-weigth: 600;
+          font-weight: 600;
         }
       `}</style>
     </>
   );
 }
-//componente react
-//function HomePage() {
-// return (
-// <div>
-//   <GlobalStyle />
-//<Titulo tag="h2"> Boas vindas de volta!</Titulo>
-//  <h2>Discord - Alura Matrix</h2>
-//<div>
-//);
-//}
 
-//export default HomePage;
+// Componente React
+// function HomePage() {
+//     // JSX
+//     return (
+//         <div>
+//             <GlobalStyle />
+//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
+//             <h2>Discord - Alura Matrix</h2>
+//         </div>
+//     )
+// }
+// export default HomePage
+
 export default function PaginaInicial() {
-  // const username = 'omariosouto';
-  const [username, setUsername] = React.useState("KethellynWend");
-  const roteamento = useRouter();
+  const username = "KethellynWend";
 
   return (
     <>
+      <GlobalStyle />
       <Box
         styleSheet={{
           display: "flex",
@@ -102,12 +101,6 @@ export default function PaginaInicial() {
           {/* Formulário */}
           <Box
             as="form"
-            onSubmit={function (infosDoEvento) {
-              infosDoEvento.preventDefault();
-              console.log("Alguém submeteu o form");
-              roteamento.push("/chat");
-              // window.location.href = '/chat';
-            }}
             styleSheet={{
               display: "flex",
               flexDirection: "column",
@@ -129,28 +122,7 @@ export default function PaginaInicial() {
               {appConfig.name}
             </Text>
 
-            {/* <input
-                              type="text"
-                              value={username}
-                              onChange={function (event) {
-                                  console.log('usuario digitou', event.target.value);
-                                  // Onde ta o valor?
-                                  const valor = event.target.value;
-                                  // Trocar o valor da variavel
-                                  // através do React e avise quem precisa
-                                  setUsername(valor);
-                              }}
-                          /> */}
             <TextField
-              value={username}
-              onChange={function (event) {
-                console.log("usuario digitou", event.target.value);
-                // Onde ta o valor?
-                const valor = event.target.value;
-                // Trocar o valor da variavel
-                // através do React e avise quem precisa
-                setUsername(valor);
-              }}
               fullWidth
               textFieldColors={{
                 neutral: {
