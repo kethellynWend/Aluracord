@@ -3,8 +3,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import appConfig from "../config.json";
 
-
-
 function Titulo(props) {
   const Tag = props.tag || "h1";
   return (
@@ -40,15 +38,14 @@ export default function PaginaInicial() {
   const roteamento = useRouter();
   return (
     <>
-
       <Box
         styleSheet={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: appConfig.theme.colors.primary[500],
+          backgroundColor: appConfig.theme.colors.primary["000"],
           backgroundImage:
-            "url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)",
+            "url(https://images.pexels.com/photos/1560093/pexels-photo-1560093.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
@@ -69,7 +66,7 @@ export default function PaginaInicial() {
             padding: "32px",
             margin: "16px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
-            backgroundColor: appConfig.theme.colors.neutrals[700],
+            backgroundColor: appConfig.theme.colors.neutrals[300],
           }}
         >
           {/* Formulário */}
@@ -96,7 +93,7 @@ export default function PaginaInicial() {
               variant="body3"
               styleSheet={{
                 marginBottom: "32px",
-                color: appConfig.theme.colors.neutrals[300],
+                color: appConfig.theme.colors.neutrals[500], //cor do alurocard -book
               }}
             >
               {appConfig.name}
@@ -129,8 +126,8 @@ export default function PaginaInicial() {
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  mainColor: appConfig.theme.colors.neutrals[800], //borda do username
+                  mainColorHighlight: appConfig.theme.colors.primary[500], //efeito de passar o mause no username
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
@@ -141,10 +138,10 @@ export default function PaginaInicial() {
               label="Entrar"
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
+                contrastColor: appConfig.theme.colors.neutrals["000"], //letra entrar
+                mainColor: appConfig.theme.colors.primary[600], //entrar
                 mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                mainColorStrong: appConfig.theme.colors.primary[500], //efeito ao passar o mause no entrar
               }}
             />
           </Box>
@@ -158,9 +155,9 @@ export default function PaginaInicial() {
               alignItems: "center",
               maxWidth: "200px",
               padding: "16px",
-              backgroundColor: appConfig.theme.colors.neutrals[800],
+              backgroundColor: appConfig.theme.colors.neutrals[800], //area da foto e username
               border: "1px solid",
-              borderColor: appConfig.theme.colors.neutrals[999],
+              borderColor: appConfig.theme.colors.neutrals[999], //borda da area da foto
               borderRadius: "10px",
               flex: 1,
               minHeight: "240px",
@@ -177,7 +174,7 @@ export default function PaginaInicial() {
               variant="body4"
               styleSheet={{
                 color: appConfig.theme.colors.neutrals[200],
-                backgroundColor: appConfig.theme.colors.neutrals[900],
+                backgroundColor: appConfig.theme.colors.neutrals[900], // nome debaixo da foto
                 padding: "3px 10px",
                 borderRadius: "1000px",
               }}
